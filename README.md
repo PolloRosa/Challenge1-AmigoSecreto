@@ -1,7 +1,5 @@
 # Challenge1-AmigoSecreto
 
-![Portada mostrando el proyecto aún en desarrollo](assets/en-desarrollo.png)
-
 ## Descripción del proyecto
 
 Proyecto de desarrollo Challenge 1 del programa ONE de Oracle y Alura Latam, Amigo Secreto.
