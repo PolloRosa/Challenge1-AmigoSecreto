@@ -7,6 +7,7 @@ function agregarAmigo() {
         amigos.push(nombreAmigo);
         document.getElementById("txtAmigo").value = "";
         agregarEnLista();
+        document.getElementById("txtAmigo").focus();
     } else alert("Por favor, inserte un nombre.");
 }
 
@@ -15,6 +16,7 @@ function sortearAmigo() {
         let elegido = generarNumeroRandom();
         let amigoElegido = amigos[elegido];
         mostrarSorteado(amigoElegido);
+        reiniciarSorteo();
     } else alert("Por favor, agregue amigos.");
 }
 // Funciones de botones FIN
@@ -49,5 +51,11 @@ function mostrarSorteado(amigo) {
     let lista = document.getElementById("resultado");
     document.getElementById("listaAmigos").innerHTML = "";
     lista.innerHTML = `<li>El amigo secreto es ${amigo}.</li>`;
+}
+
+function reiniciarSorteo() {
+    amigos = [];
+    document.getElementById("listaAmigos").innerHTML = "";
+    document.getElementById("resultado").innerHTML = "";
 }
 // Funciones secundarias FIN
