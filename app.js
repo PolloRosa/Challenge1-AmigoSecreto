@@ -2,7 +2,7 @@ let amigos = [];
 
 // Funciones de botones INICIO
 function agregarAmigo() {
-    let nombreAmigo = document.getElementById("txtAmigo").value;
+    let nombreAmigo = darFormatoAmigo(document.getElementById("txtAmigo").value);
     if(validarNombreAmigo(nombreAmigo)) {
         limpiarResultado();
         amigos.push(nombreAmigo);
@@ -23,6 +23,11 @@ function sortearAmigo() {
 // Funciones de botones FIN
 
 // Funciones de validación INICIO
+function darFormatoAmigo(amigo) {
+    amigo = amigo.trim();
+    return amigo[0].toUpperCase() + amigo.substring(1);
+}
+
 function validarNombreAmigo(amigo) {
     if(amigo === "") return false;
     else return true;
