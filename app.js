@@ -4,9 +4,10 @@ let amigos = [];
 function agregarAmigo() {
     let nombreAmigo = document.getElementById("txtAmigo").value;
     if(validarNombreAmigo(nombreAmigo)) {
+        limpiarResultado();
         amigos.push(nombreAmigo);
         document.getElementById("txtAmigo").value = "";
-        agregarEnLista();
+        mostrarEnLista();
         document.getElementById("txtAmigo").focus();
     } else alert("Por favor, inserte un nombre.");
 }
@@ -34,17 +35,14 @@ function validarLista() {
 // Funciones de validación FIN
 
 // Funciones secundarias INICIO
-// Función que genera un índice random del arreglo amigos
 function generarNumeroRandom() {
     return Math.floor(Math.random() * amigos.length);
 }
 
-function agregarEnLista() {
+function mostrarEnLista() {
     let lista = document.getElementById("listaAmigos");
     lista.innerHTML = "";
-    for(let index = 0; index < amigos.length; index++) {
-        lista.innerHTML += `<li>${amigos[index]}</li>`;
-    }
+    amigos.forEach(elem => lista.innerHTML += `<li>${elem}</li>`);
 }
 
 function mostrarSorteado(amigo) {
@@ -56,6 +54,9 @@ function mostrarSorteado(amigo) {
 function reiniciarSorteo() {
     amigos = [];
     document.getElementById("listaAmigos").innerHTML = "";
+}
+
+function limpiarResultado() {
     document.getElementById("resultado").innerHTML = "";
 }
 // Funciones secundarias FIN
