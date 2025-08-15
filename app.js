@@ -2,14 +2,15 @@ let amigos = [];
 
 // Funciones de botones INICIO
 function agregarAmigo() {
-    let nombreAmigo = darFormatoAmigo(document.getElementById("txtAmigo").value);
+    let nombreAmigo = document.getElementById("txtAmigo").value;
     if(validarNombreAmigo(nombreAmigo)) {
+        nombreAmigo = darFormatoAmigo(nombreAmigo);
         limpiarResultado();
         amigos.push(nombreAmigo);
         document.getElementById("txtAmigo").value = "";
         mostrarEnLista();
-        document.getElementById("txtAmigo").focus();
     } else alert("Por favor, inserte un nombre.");
+    document.getElementById("txtAmigo").focus();
 }
 
 function sortearAmigo() {
@@ -29,7 +30,7 @@ function darFormatoAmigo(amigo) {
 }
 
 function validarNombreAmigo(amigo) {
-    if(amigo === "") return false;
+    if(amigo.trim() === "") return false;
     else return true;
 }
 
