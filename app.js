@@ -10,7 +10,7 @@ function agregarAmigo() {
             amigos.push(nombreAmigo);
             document.getElementById("txtAmigo").value = "";
             mostrarEnLista();
-        } else alert("El nombre ya se encuentra registrado.");
+        } else alert("El nombre ya se encuentra registrado. Inserte un nuevo nombre.");
     } else alert("Por favor, inserte un nombre.");
     document.getElementById("txtAmigo").focus();
 }
@@ -37,8 +37,14 @@ function validarNombreAmigo(amigo) {
 }
 
 function validarLista() {
+    if(validarNombreAmigo(document.getElementById("txtAmigo").value)) {
+        if(confirm("Confirme para insertar el nombre.")) {
+            agregarAmigo();
+        }
+    }
     if(amigos.length === 0) return false;
     else return true;
+
 }
 
 function validarNombreUnico(amigo) {
