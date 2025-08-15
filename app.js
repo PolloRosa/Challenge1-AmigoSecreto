@@ -6,9 +6,11 @@ function agregarAmigo() {
     if(validarNombreAmigo(nombreAmigo)) {
         nombreAmigo = darFormatoAmigo(nombreAmigo);
         limpiarResultado();
-        amigos.push(nombreAmigo);
-        document.getElementById("txtAmigo").value = "";
-        mostrarEnLista();
+        if(validarNombreUnico(nombreAmigo)) {
+            amigos.push(nombreAmigo);
+            document.getElementById("txtAmigo").value = "";
+            mostrarEnLista();
+        } else alert("El nombre ya se encuentra registrado.");
     } else alert("Por favor, inserte un nombre.");
     document.getElementById("txtAmigo").focus();
 }
@@ -37,6 +39,10 @@ function validarNombreAmigo(amigo) {
 function validarLista() {
     if(amigos.length === 0) return false;
     else return true;
+}
+
+function validarNombreUnico(amigo) {
+    return !amigos.includes(amigo);
 }
 // Funciones de validación FIN
 
