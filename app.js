@@ -1,6 +1,9 @@
 let amigos = [];
 
 // Funciones de botones INICIO
+/**
+ * Agrega nombre de amigo a la lista para el sorteo.
+ */
 function agregarAmigo() {
     let nombreAmigo = document.getElementById("txtAmigo").value;
     if(validarNombreAmigo(nombreAmigo)) {
@@ -15,6 +18,9 @@ function agregarAmigo() {
     document.getElementById("txtAmigo").focus();
 }
 
+/**
+ * Realiza el sorteo con la lista de amigos actualizada.
+ */
 function sortearAmigo() {
     if(validarLista()) {
         let elegido = generarNumeroRandom();
