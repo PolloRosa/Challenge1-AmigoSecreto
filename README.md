@@ -1,4 +1,6 @@
-# Challenge1-AmigoSecreto
+# Challenge 1: Amigo Secreto
+
+![Grupo de amigos saltando en la playa en el atardecer](assets/portada_readme.png)
 
 ## Descripción del proyecto
 
