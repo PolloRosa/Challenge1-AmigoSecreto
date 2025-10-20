@@ -77,3 +77,7 @@ git clone https://github.com/PolloRosa/Challenge1-AmigoSecreto.git
 ## Autor
 
 Angela Cáceres @PolloRosa :baby_chick:
+
+## Licencia
+
+El proyecto está bajo la licencia MIT. Puedes usarlo, compartirlo y modificarlo libremente, incluso con fines comerciales. La única condición es que conserves el aviso de derechos de autor original y el texto de la licencia en todas las copias o partes sustanciales del software. 
